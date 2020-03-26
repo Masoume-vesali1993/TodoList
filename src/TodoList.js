@@ -8,11 +8,28 @@ class TodoList extends Component {
             items: []
         };
 
-        this.addTtem = this.addTtem.bind(this);
+        this.addTtem = this.addItem.bind(this);
     }
 
     addItem(e) {
+        if (this._inputElement !== ""){
+            var newItem ={
+                text: this._inputElement.value,
+                key: Date.now()
+            };
 
+            this.setState((prevState) => {
+                return {
+                    items: prevState.items.concat(newItem)
+                };
+            });
+        }
+
+        this._inputElement.value = "";
+
+        console.log(this.state.items);
+
+        e.preventDefault(); //add part console text object
     }
 
 
