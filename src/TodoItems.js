@@ -5,14 +5,16 @@ class TodoItems extends Component {
         return <li key={item.key}>{item.text}</li>
     }
 
-    render() {
+    render(){
         var todoEntries = this.props.entries;
-        var ListITEMS = TodoEntries.map(this.createTasks);
+        var listItems = todoEntries.map(this.createTasks);
 
         return (
             <ul className="theList">
-                {ListItems}
+                {listItems}
             </ul>
         );
     }
 }
+
+export default TodoItems;
